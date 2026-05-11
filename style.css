@@ -1,0 +1,225 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+  --middle: #eef2ff;
+  --left: #ecfeff;
+  --right: #fff7ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+  color: var(--text);
+}
+
+.app {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.main-title {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  color: var(--text);
+  outline: none;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.comparison-card,
+.similarities-card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  margin-bottom: 24px;
+}
+
+.comparison-header,
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr auto;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.comparison-header {
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.comparison-header input,
+.comparison-header div {
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  border: 2px solid transparent;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.comparison-header input:first-child {
+  background: var(--left);
+}
+
+.comparison-header div {
+  background: var(--middle);
+}
+
+.comparison-header input:last-child {
+  background: var(--right);
+}
+
+.comparison-row {
+  margin-bottom: 12px;
+}
+
+textarea,
+input {
+  font: inherit;
+}
+
+.comparison-row textarea {
+  width: 100%;
+  min-height: 95px;
+  resize: vertical;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.comparison-row textarea:focus,
+.comparison-header input:focus,
+.main-title:focus,
+.similarity-item textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.left-field {
+  background: var(--left);
+}
+
+.middle-field {
+  background: var(--middle);
+  text-align: center;
+  font-weight: 700;
+}
+
+.right-field {
+  background: var(--right);
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.primary:hover {
+  background: var(--primary-dark);
+}
+
+.danger {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.delete-row,
+.delete-similarity {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.delete-row:hover,
+.delete-similarity:hover {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.similarities-card h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.similarity-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.similarity-item textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+  outline: none;
+  background: #f0fdf4;
+}
+
+.actions {
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-header div::before {
+    content: "";
+  }
+
+  .delete-row,
+  .delete-similarity {
+    width: 100%;
+    border-radius: 14px;
+  }
+}
