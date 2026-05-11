@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compara y contrasta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="app">
+    <header class="hero">
+      <input 
+        id="mainTitle" 
+        class="main-title" 
+        value="Compara y contrasta" 
+        aria-label="Título principal"
+      />
+      <p>Completa las diferencias, las categorías y las semejanzas.</p>
+    </header>
+
+    <section class="comparison-card">
+      <div class="comparison-header">
+        <input id="titleA" value="Elemento A" aria-label="Nombre del elemento A" />
+        <div>Categorías</div>
+        <input id="titleB" value="Elemento B" aria-label="Nombre del elemento B" />
+      </div>
+
+      <div id="comparisonRows" class="comparison-rows"></div>
+
+      <button id="addRowBtn" class="btn primary">+ Añadir categoría</button>
+    </section>
+
+    <section class="similarities-card">
+      <h2>Semejanzas</h2>
+      <div id="similaritiesList"></div>
+      <button id="addSimilarityBtn" class="btn primary">+ Añadir semejanza</button>
+    </section>
+
+    <footer class="actions">
+      <button id="resetBtn" class="btn danger">Borrar todo y empezar de nuevo</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
